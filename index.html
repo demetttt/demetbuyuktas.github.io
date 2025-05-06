@@ -22,6 +22,21 @@
       margin: 0;
       font-size: 2.5rem;
     }
+    nav {
+      text-align: center;
+      background: #003d73;
+      padding: 10px;
+    }
+    nav .lang-toggle {
+      color: white;
+      background: #0066cc;
+      border: none;
+      padding: 8px 16px;
+      margin: 0 5px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
     .section {
       max-width: 900px;
       margin: auto;
@@ -42,29 +57,47 @@
       padding: 20px;
       margin-top: 40px;
     }
+    .tr { display: none; }
   </style>
 </head>
 <body>
 
 <header>
   <h1>Demet Büyüktas</h1>
-  <p>Mechanical Engineering Student | Yasar University</p>
+  <p class="en">Mechanical Engineering Student | Yasar University</p>
+  <p class="tr">Makine Mühendisliği Öğrencisi | Yaşar Üniversitesi</p>
 </header>
 
-<div class="section">
+<nav>
+  <button class="lang-toggle" onclick="toggleLang('en')">EN</button>
+  <button class="lang-toggle" onclick="toggleLang('tr')">TR</button>
+</nav>
+
+<div class="section en">
   <h2>Summary</h2>
   <p>I am a Mechanical Engineering student with strong communication, presentation, and self-expression skills. Experienced in coaching programs, capable of guiding individuals toward their goals. Skilled in problem-solving and teamwork.</p>
 </div>
+<div class="section tr">
+  <h2>Özet</h2>
+  <p>Güçlü iletişim, sunum ve kendini ifade etme becerilerine sahip bir Makine Mühendisliği öğrencisiyim. Koçluk programlarında deneyimliyim ve bireylerin hedeflerine ulaşmasında rehberlik yapabilirim. Problem çözme ve ekip çalışmasına yatkınım.</p>
+</div>
 
-<div class="section">
+<div class="section en">
   <h2>Education</h2>
   <ul>
     <li><strong>Yasar University</strong> - B.Sc. in Mechanical Engineering (2021 - Present)</li>
     <li><strong>Fen Bilimleri Schools</strong> - High School Graduate (2017 - 2021)</li>
   </ul>
 </div>
+<div class="section tr">
+  <h2>Eğitim</h2>
+  <ul>
+    <li><strong>Yaşar Üniversitesi</strong> - Makine Mühendisliği Lisans (2021 - Günümüz)</li>
+    <li><strong>Fen Bilimleri Okulları</strong> - Lise Mezunu (2017 - 2021)</li>
+  </ul>
+</div>
 
-<div class="section">
+<div class="section en">
   <h2>Skills</h2>
   <ul>
     <li>CAD & Design (Fusion 360)</li>
@@ -74,22 +107,50 @@
     <li>Communication & Presentation Skills</li>
   </ul>
 </div>
+<div class="section tr">
+  <h2>Beceriler</h2>
+  <ul>
+    <li>CAD & Tasarım (Fusion 360)</li>
+    <li>Spor & Antrenman Yetkinlikleri</li>
+    <li>Problem Çözme & Analitik Düşünme</li>
+    <li>Hızlı Öğrenme & Uyum Sağlama</li>
+    <li>İletişim & Sunum Becerileri</li>
+  </ul>
+</div>
 
-<div class="section">
+<div class="section en">
   <h2>Contact</h2>
   <p>Email: dmtbuyuktas@gmail.com<br>
      Phone: 0537 941 32 82<br>
      Address: 6524 Sk. Yalı Mah., Karşıyaka / İzmir</p>
 </div>
+<div class="section tr">
+  <h2>İletişim</h2>
+  <p>E-posta: dmtbuyuktas@gmail.com<br>
+     Telefon: 0537 941 32 82<br>
+     Adres: 6524 Sk. Yalı Mah., Karşıyaka / İzmir</p>
+</div>
 
-<div class="section">
+<div class="section en">
   <h2>Languages</h2>
   <p>English</p>
+</div>
+<div class="section tr">
+  <h2>Diller</h2>
+  <p>İngilizce</p>
 </div>
 
 <footer>
   &copy; 2025 Demet Büyüktas
 </footer>
+
+<script>
+  function toggleLang(lang) {
+    document.querySelectorAll('.en').forEach(el => el.style.display = lang === 'en' ? 'block' : 'none');
+    document.querySelectorAll('.tr').forEach(el => el.style.display = lang === 'tr' ? 'block' : 'none');
+  }
+  toggleLang('en');
+</script>
 
 </body>
 </html>
